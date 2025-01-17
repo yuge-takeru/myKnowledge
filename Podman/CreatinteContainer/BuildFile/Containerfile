@@ -137,8 +137,8 @@ RUN mkdir /etc/nginx/ssl && \
     setsebool -P httpd_can_network_connect 1
 
 # uWSGIの設定
-RUN mkdir /var/pj_sock && \
-    chmod -R 777 /var/pj_sock
+RUN mkdir /var/mypj_sock && \
+    chmod -R 777 /var/mypj_sock
 
 # Supervisordの設定
 RUN mkdir -p /etc/supervisord/ && \
@@ -215,8 +215,8 @@ RUN ssh-keygen -A
 
 
 # logファイルフォルダの作成
-RUN mkdir -p /var/log/ppmg && \
-    touch /var/log/ppmg/app.log
+RUN mkdir -p /var/log/mypj && \
+    touch /var/log/mypj/app.log
 
 
 # コンテナ起動時に実行するスクリプトの作成
